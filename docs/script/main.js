@@ -6,6 +6,8 @@ $(() => {
 	const width = 1920, height = 1080, retina = 2;
 	var scale = height/25, xc = 0, yc = 0, queueRedraw;
 
+	var baseUrl = window.location.href.replace(/\/+$/,'')+'/';
+
 	var coordinates = {};
 	var parameters = [];
 	var currentParameter = 0;
@@ -211,7 +213,7 @@ $(() => {
 	function loadBin(filename, cb) {
 		//console.log('load '+filename);
 		var xhr = new XMLHttpRequest();
-		xhr.open('GET', window.location.href+'/data/'+filename, true);
+		xhr.open('GET', baseUrl+'data/'+filename, true);
 		xhr.responseType = 'arraybuffer';
 		xhr.onload = e => {
 			//console.log('finished '+filename);
@@ -222,7 +224,7 @@ $(() => {
 
 	function loadTxt(filename, cb) {
 		var xhr = new XMLHttpRequest();
-		xhr.open('GET', window.location.href+'/data/'+filename, true);
+		xhr.open('GET', baseUrl+'data/'+filename, true);
 		xhr.responseType = 'text';
 		xhr.onload = e => cb(xhr.response);
 		xhr.send();
