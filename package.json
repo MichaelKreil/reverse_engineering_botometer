@@ -1,0 +1,12 @@
+{
+  "name": "reverse_engineer_botometer",
+  "version": "1.0.0",
+  "description": "",
+  "author": "Michael Kreil",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "async": "^3.1.0",
+    "mississippi2": "^1.0.5"
+  }
+}
