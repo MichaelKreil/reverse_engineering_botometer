@@ -211,7 +211,7 @@ $(() => {
 	function loadBin(filename, cb) {
 		//console.log('load '+filename);
 		var xhr = new XMLHttpRequest();
-		xhr.open('GET', '../data/'+filename, true);
+		xhr.open('GET', window.location.href+'/data/'+filename, true);
 		xhr.responseType = 'arraybuffer';
 		xhr.onload = e => {
 			//console.log('finished '+filename);
@@ -222,7 +222,7 @@ $(() => {
 
 	function loadTxt(filename, cb) {
 		var xhr = new XMLHttpRequest();
-		xhr.open('GET', '../data/'+filename, true);
+		xhr.open('GET', window.location.href+'/data/'+filename, true);
 		xhr.responseType = 'text';
 		xhr.onload = e => cb(xhr.response);
 		xhr.send();
